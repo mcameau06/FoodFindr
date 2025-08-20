@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  background: radial-gradient(circle at top right, rgba(94, 234, 212, 0.15), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(255, 0, 128, 0.1), transparent 40%),
+              #0b0f14;
+  color: #e6edf3;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+.search-container{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    height: 100vh;
+    list-style: none;
+}
+ul{
+  list-style-type: none;
+
+}
+span{
+  background-color: #0b0f14;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.results{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

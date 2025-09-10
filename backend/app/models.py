@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-
+from typing import List
 
 class SearchResponse(BaseModel):
     name:str
@@ -10,4 +10,6 @@ class SearchResponse(BaseModel):
     user_ratings_total:int |None=None #total number of ratings
     place_id:str # each establishment has its own unique id
     open_now:bool | None=None
-
+    photo_url: str | None = None
+    types: List[str] = []
+ 

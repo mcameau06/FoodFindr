@@ -43,6 +43,10 @@ async function queryServer(lat,lng,query){
 
   try {
     const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const data = await response.json();
     return data;
   }
@@ -80,21 +84,22 @@ let displayResults = (data) => {
 
 
 async function searchFood(query) {
-try{
-let {lat,lng} = await getUserLocation();
+  try{
+    let {lat,lng} = await getUserLocation();
 
-let results = await queryServer(lat,lng,query);
+    let results = await queryServer(lat,lng,query);
 
-displayResults(results);
-}
-catch(error){
-  console.log(error);
-  displayResults([]);
-}
+    displayResults(results);
+  }
+  catch(error){
+    console.log(error);
+    displayResults([]);
+  }
 }
 
 let searchBtn = document.querySelector(".searchBtn");
 
+// carries out search
 searchBtn.addEventListener("click",(e) => {
   e.preventDefault();
   searchFood(getUserInput());

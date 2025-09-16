@@ -2,10 +2,10 @@ from dotenv import load_dotenv
 import os
 import requests
 from fastapi.responses import RedirectResponse
-
+from config import Config 
 load_dotenv()
 
-api_key = os.getenv("GOOGLE_API_KEY")
+api_key = Config.GOOGLE_API_KEY
 
 
 def search_nearby_places(query:str, lat:float, lng:float):
@@ -30,7 +30,6 @@ def search_nearby_places(query:str, lat:float, lng:float):
 
 def format_search_places_response(raw_json):
     formatted = []
-
     
     for place in raw_json.get("results", []):
         formatted.append({

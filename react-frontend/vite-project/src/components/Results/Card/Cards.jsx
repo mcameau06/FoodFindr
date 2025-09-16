@@ -8,15 +8,15 @@ const Card = ({ place }) => {
     rating,
     open_now,
     price_level,
-    photo_url,
+    photo_urls,
     place_id
   } = place;
 
   return (
     <div className={styles.card}>
-      {photo_url && (
+      {photo_urls && (
         <div className={styles.imageContainer}>
-          <img src={photo_url} alt={name} className={styles.image} />
+          <img src={photo_urls[0]} alt={name} className={styles.image} />
         </div>
       )}
       

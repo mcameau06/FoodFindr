@@ -7,7 +7,7 @@ import { searchFood } from './services/api';
 import './App.css';
 
 function App() {
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const { getUserLocation } = useGeolocation();

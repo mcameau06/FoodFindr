@@ -15,11 +15,17 @@ const Results = ({ results, isLoading, error }) => {
     </div>;
   }
 
-  if (!results || results.length === 0) {
+   if(!results){
+    return null
+  }
+
+  if (results && results.length === 0) {
     return <div className={styles.results}>
       <div className={styles.noResults}>No results found</div>
     </div>;
   }
+
+ 
 
   return (
     <div className={styles.results}>
@@ -28,7 +34,7 @@ const Results = ({ results, isLoading, error }) => {
       </div>
       <div className={styles.cardsContainer}>
         {results.map((place, index) => (
-          <Card key={place.place_id || index} place={place} />
+          <Card key={index} place={place} />
         ))}
       </div>
     </div>

@@ -115,7 +115,7 @@ def format_search_places_response(raw_json):
                     if photo_name:
                         photo_url = get_photo_url(photo_name)
                         photo_urls.append(photo_url)
-                        formatted.append({
+            formatted.append({
                 "name": place.get("displayName", {}).get("text", ""),
                 "address": place.get("formattedAddress", ""),
                 "lat": place.get("location", {}).get("latitude"),

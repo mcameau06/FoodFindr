@@ -4,9 +4,13 @@ import styles from './Results.module.css';
 
 const Results = ({ results, isLoading, error }) => {
   if (isLoading) {
-    return <div className={styles.results}>
-      <div className={styles.loading}>Loading...</div>
-    </div>;
+    return (
+      <>
+        <div className={styles.results}>
+          <div className={styles.loading}>Loading...</div>
+        </div>;
+      </>
+    );
   }
 
   if (error) {
@@ -33,9 +37,10 @@ const Results = ({ results, isLoading, error }) => {
         <h2>Found {results.length} places</h2>
       </div>
       <div className={styles.cardsContainer}>
-        {results.map((place, index) => (
-          <Card key={index} place={place} />
-        ))}
+        {results.map((place, index) => ( 
+          <Card key={place.place_id} place={place} />   
+        )
+        )}
       </div>
     </div>
   );

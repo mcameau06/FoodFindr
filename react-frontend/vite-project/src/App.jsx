@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SearchForm from './components/Search/SearchForm';
 import Results from './components/Results/Results';
+import RestaurantMap from './components/Map/Map';
 import Navbar from './components/Navbar/Navbar';
 import useGeolocation from './hooks/useGeolocation';
 import { searchFood } from './services/api';
@@ -29,10 +30,14 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className='App'>
       <Navbar/>
       <SearchForm onSearch={handleSearch} isLoading={isLoading} />
-      <Results results={results} isLoading={isLoading} error={error} />
+
+      <div className='foodContainer'>
+        <Results results={results} isLoading={isLoading} error={error} />
+        <RestaurantMap/>
+      </div>
     </div>
   );
 }

@@ -46,3 +46,64 @@ body {
   }
 }
 
+.view-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.toggle-btn {
+  padding: 12px 24px;
+  border: 2px solid #007bff;
+  background: white;
+  color: #007bff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+}
+
+.toggle-btn:hover {
+  background: #f0f8ff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+.toggle-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+.toggle-btn:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  .view-controls {
+    gap: 8px;
+    margin: 15px 0;
+  }
+  
+  .toggle-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
+
+.foodContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  gap:24px;
+  margin-top: 32px;
+
+}
+
